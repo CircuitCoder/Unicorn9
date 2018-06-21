@@ -1,0 +1,139 @@
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding: 40px;
+  min-height: 100vh;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+button {
+  font-family: inherit;
+  border: rgba(0,0,0,.12) 1px solid;
+  background: white;
+  box-shadow: rgba(0,0,0,.3) 0 2px 6px;
+  padding: 10px 15px;
+
+  cursor: pointer;
+  border-radius: 2px;
+  transition: box-shadow .2s ease;
+}
+
+button:hover, button:focus {
+  box-shadow: rgba(0,0,0,.3) 0 4px 12px;
+}
+
+a {
+  text-decoration: underline;
+  color: rgba(0,0,0,.7);
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: rgba(0,0,0,1);
+}
+
+.hero {
+  width: 400px;
+}
+
+.hero-hint {
+  color: rgba(0,0,0,.3);
+  font-size: 12px;
+  margin-top: 10px;
+  display: block;
+}
+
+.hero-hint:hover {
+  color: rgba(0,0,0,.54);
+}
+
+.primary {
+  font-family: 'Fredericka the Great';
+  word-break: break-all;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 44px;
+  margin-bottom: 20px;
+  font-variant: small-caps;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.filename {
+  font-family: monospace;
+  padding: 5px;
+  background: rgba(0,0,0,.12);
+  border-radius: 2px;
+}
+
+.overlay-backdrop {
+  font-family: 'Fredericka the Great';
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(255,255,255,.8);
+  align-items: center;
+  justify-content: center;
+
+  display: none;
+  transition: opacity .5s ease;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.overlay-backdrop.rendered {
+  display: flex;
+}
+
+.overlay-backdrop.shown {
+  opacity: 1;
+}
+
+.overlay-content {
+  max-width: 600px;
+  margin: 0 auto;
+
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.email {
+  font-family: monospace;
+}
+
+/* Animation */
+body {
+  transition: transform .5s ease-out, filter .5s .4s ease-out, opacity .5s ease-out;
+  transform-origin: 50%;
+}
+
+body.waiting {
+  transform: scale(.95);
+  opacity: 0;
+  filter: grayscale(100%);
+}
